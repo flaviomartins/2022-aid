@@ -20,11 +20,20 @@ If you are missing ```git``` you can [Download](https://github.com/flaviomartins
 
 1. [Install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)
 
-2. Open Terminal and move into this repo ```$ cd yourpath/2022-aid/```
+2. Open a Terminal window and move into this repo
 
-3. Run ```$ docker-compose up``` on a Terminal window.
+3. ```$ cd yourpath/2022-aid/```
+
+4. ```$ docker-compose up```
 
 4. Keep the Terminal window open whenever you need access to the db.
+
+5. Open another Terminal window to run mysql client
+
+6. ```docker-compose exec db mysql -u aid -p```
+
+7. Enter the the password: aid.
+
 
 ## Install Java JDK 11
 
