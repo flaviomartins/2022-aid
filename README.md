@@ -28,11 +28,13 @@ If you are missing ```git``` you can [Download](https://github.com/flaviomartins
 
 4. Keep the Terminal window open whenever you need access to the db.
 
-5. Open another Terminal window to run mysql client
+5. Open another Terminal window to run mysql client after moving to the data directory.
 
-6. ```docker-compose exec db mysql -u aid -p```
+6. ```docker-compose exec db bash -c "cd /tmp/data/ && mysql -u aid -p"```
 
 7. Enter the the password: aid.
+
+8. Lets try to list the data/ files. Run ```mysql> system ls -l``` to list the files.
 
 
 ## Install Java JDK 11
