@@ -12,6 +12,7 @@ services:
     restart: always
     volumes:
       - local_mysql_data:/var/lib/mysql:Z
+      - ./data:/tmp/data
     env_file:
       - ./.envs/.mysql
     environment:
