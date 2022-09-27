@@ -11,8 +11,9 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     volumes:
-      - local_mysql_data:/var/lib/mysql:Z
+      - ./docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d/
       - ./data:/tmp/data
+      - local_mysql_data:/var/lib/mysql:Z
     env_file:
       - ./.envs/.mysql
     environment:
