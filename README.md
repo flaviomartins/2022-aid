@@ -12,6 +12,8 @@ Note: The lab guides were not updated to reflect this setup. The provided VM is 
 
 ## Clone this repository
 
+0. Open a Terminal window and move to your directory of choice
+
 1. ```$ git clone https://github.com/flaviomartins/2022-aid.git```
 
 If you are missing ```git``` you can [Download](https://github.com/flaviomartins/2022-aid/archive/refs/heads/main.zip) 
