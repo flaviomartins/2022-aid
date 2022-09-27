@@ -20,3 +20,11 @@ services:
       MYSQL_ROOT_PASSWORD: aid
       MYSQL_USER: aid
       MYSQL_PASSWORD: aid
+    ports:
+      - "3306:3306"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080

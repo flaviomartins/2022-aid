@@ -32,9 +32,25 @@ If you are missing ```git``` you can [Download](https://github.com/flaviomartins
 
 6. ```docker-compose exec db bash -c "cd /tmp/data/ && mysql -u aid -p"```
 
-7. Enter the the password: aid.
+7. Enter the the password: aid
 
 8. Lets try to list the data/ files. Run ```mysql> system ls -l``` to list the files.
+
+## Alternatives to MySQL Workbench
+
+### Adminer
+
+1. Visit the [Adminer page](http://localhost:8080) (Included)
+
+2. Enter the credentials
+
+### Install Sequel Ace
+
+1. https://apps.apple.com/us/app/sequel-ace/id1518036000?mt=12
+
+2. Open Sequel Ace
+
+3. Enter the credentials
 
 
 ## Install Java JDK 11
