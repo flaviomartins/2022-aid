@@ -62,7 +62,7 @@ If you are missing ```git``` you can [Download](https://github.com/flaviomartins
 1. https://formulae.brew.sh/formula/openjdk@11
 
 
-## Install the Pentaho 9.3
+## Install the Pentaho 9.3 (Still a Work in Progress on arm64)
 
 0. Consult the [Software List](http://groups.tecnico.ulisboa.pt/aid-meic/virtualbox/)
 
