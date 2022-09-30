@@ -86,7 +86,7 @@ Here is how you can force the shell to run in Intel mode so that you can continu
 
 7. Click on the Shell tab and use the following as its Run Command to force the shell run under Rosetta: ```env /usr/bin/arch -x86_64 /bin/zsh --login```
 
-Untick the Run inside shell checkbox. Clearing the checkbox would prevent running the shell twice, which could bloat your environment variables since `~/.zshrc` gets run twice.
+8. Untick the Run inside shell checkbox. Clearing the checkbox would prevent running the shell twice, which could bloat your environment variables since `~/.zshrc` gets run twice.
 
 
 ## Install the Pentaho 9.3 (Work in Progress on aarch64)
