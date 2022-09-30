@@ -59,17 +59,58 @@ If you are missing ```git``` you can [Download](https://github.com/flaviomartins
 
 ### Using Homebrew (recommended)
 
-1. https://formulae.brew.sh/formula/openjdk@11
+1. [Install Homebrew](https://brew.sh/)
+
+2. ```brew install openjdk@11```
 
 
-## Install the Pentaho 9.3 (Still a Work in Progress on arm64)
+## Install Rosetta 2
+
+Rosetta 2 enables a Mac with Apple silicon to use apps built for a Mac with an Intel processor.
+
+1. Run ```$ softwareupdate --install-rosetta``` in a Terminal window.
+
+Here is how you can force the shell to run in Intel mode so that you can continue working in this little command-line Rosetta Island while waiting for native ARM64 support.
+
+1. Open the Terminal app.
+
+2. Open the Terminal app’s Preferences.
+
+3. Click on the Profiles tab.
+
+4. Select a profile, click on the ellipsis at the bottom of the profile list and then select Duplicate Profile.
+
+5. Click on the new profile and give it a good name. I named mine as “Terminal (Intel)”.
+
+6. Also in the new profile, click on the Window tab. In the Title, put a name to indicate that this is for running Intel-based apps. I put “Terminal (Intel)” on mine.
+
+7. Click on the Shell tab and use the following as its Run Command to force the shell run under Rosetta: ```env /usr/bin/arch -x86_64 /bin/zsh --login```
+
+Untick the Run inside shell checkbox. Clearing the checkbox would prevent running the shell twice, which could bloat your environment variables since `~/.zshrc` gets run twice.
+
+
+## Install the Pentaho 9.3 (Work in Progress on aarch64)
 
 0. Consult the [Software List](http://groups.tecnico.ulisboa.pt/aid-meic/virtualbox/)
 
-1. Download [Pentaho server](https://sourceforge.net/projects/pentaho/files/Pentaho-9.3/server/)
+1. Download the necessary [Pentaho client-tools](https://sourceforge.net/projects/pentaho/files/Pentaho-9.3/client-tools/)
 
-2. Download the necessary [Pentaho client-tools](https://sourceforge.net/projects/pentaho/files/Pentaho-9.3/client-tools/)
+2. Create a home directory `~/Pentaho/` to install the tools.
 
+3. Most tools seem to run if launched from the `Terminal (Intel)` profile with the exception of PDI. Lets fix that.
+
+### Pentaho Data Integration 
+
+1. The PDI tool should be installed at `~/Pentaho/data-integration/`.
+
+2. To run on Apple Silicon we need to replace the bundled version of SWT at `~/Pentaho/data-integration/libswt/osx64/swt.jar` with the `swt.jar` for `aarch64` inside this zip [swt-4.26M1-cocoa-macosx-aarch64.zip](https://download.eclipse.org/eclipse/downloads/drops4/S-4.26M1-202209281800/swt-4.26M1-cocoa-macosx-aarch64.zip)
+
+3. Now open a Terminal window and switch to the `Terminal (Intel)` profile and move into the directory of PDI ```$ cd ~/Pentaho/data-integration/```.
+
+4. You can now run PDI with ```$ ./spoon.sh```.
+
+
+-- 
 If you can help improve this guide send me a pull request!
 
 Good luck!
