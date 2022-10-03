@@ -28,3 +28,9 @@ services:
     restart: always
     ports:
       - 8080:8080
+  
+  mycli:
+    build:
+      context: .
+      dockerfile: ./compose/mycli/Dockerfile
+    image: mycli

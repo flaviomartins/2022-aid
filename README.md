@@ -48,15 +48,26 @@ You should have Homebrew installed on your system before following this guide.
 8. Lets try to list the data/ files. Run ```mysql> system ls -l``` to list the files.
 
 
-## Alternatives to MySQL Workbench
+## MyCLI
 
-### Adminer
+MyCLI is a command line interface for MySQL, MariaDB, and Percona with auto-completion and syntax highlighting.
 
-1. Visit the [Adminer page](http://localhost:8080) (Included)
+You can opt to run MyCLI instead of `mysql` client for the improvements in ease of use.
+
+1.  ```$ docker-compose run mycli -h db -u aid -p aid```
+
+
+## MySQL Workbench Alternatives
+
+MySQL Workbench is crashing on the Apple Silicon Macs.
+
+### Adminer (Web App)
+
+1. Visit the [Adminer page](http://localhost:8080)
 
 2. Enter the credentials
 
-### Install Sequel Ace
+### Install Sequel Ace (Native App)
 
 1. https://apps.apple.com/us/app/sequel-ace/id1518036000?mt=12
 
