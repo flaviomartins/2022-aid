@@ -103,11 +103,13 @@ Here is how you can force the shell to run in Intel mode so that you can continu
 
 1. The PDI tool should be installed at `~/Pentaho/data-integration/`.
 
-2. To run on Apple Silicon we need to replace the bundled version of SWT at `~/Pentaho/data-integration/libswt/osx64/swt.jar` with the `swt.jar` for `aarch64` inside this zip [swt-4.26M1-cocoa-macosx-aarch64.zip](https://download.eclipse.org/eclipse/downloads/drops4/S-4.26M1-202209281800/swt-4.26M1-cocoa-macosx-aarch64.zip)
+2. Download the [mysql-connector-java](https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.30.zip) driver and copy the `.jar` file inside to `~/Pentaho/data-integration/drivers/`
 
-3. Now open a Terminal window and switch to the `Terminal (Intel)` profile and move into the directory of PDI ```$ cd ~/Pentaho/data-integration/```.
+3. To run on Apple Silicon we need to replace the bundled version of SWT at `~/Pentaho/data-integration/libswt/osx64/swt.jar` with the `swt.jar` for `aarch64` inside this zip [swt-4.26M1-cocoa-macosx-aarch64.zip](https://download.eclipse.org/eclipse/downloads/drops4/S-4.26M1-202209281800/swt-4.26M1-cocoa-macosx-aarch64.zip)
 
-4. You can now run PDI with ```$ ./spoon.sh```.
+4. Now open a Terminal window and switch to the `Terminal (Intel)` profile and move into the directory of PDI ```$ cd ~/Pentaho/data-integration/```.
+
+5. You can now run PDI with ```$ ./spoon.sh```.
 
 
 -- 
