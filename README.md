@@ -10,15 +10,24 @@ On the other hand, the current version of this guide recommends the installation
 
 Note: The lab guides were not updated to reflect this setup. The provided VM is still the recommended setup for this course. 
 
+
+## Homebrew (recommended)
+
+You should have Homebrew installed on your system before following this guide.
+
+1. Follow the instructions here: [Install Homebrew](https://brew.sh/)
+
+2. Install your first package ```$ brew install git```
+
+
 ## Clone this repository
 
 0. Open a Terminal window and move to your directory of choice
 
 1. ```$ git clone https://github.com/flaviomartins/2022-aid.git```
 
-If you are missing ```git``` you can [Download](https://github.com/flaviomartins/2022-aid/archive/refs/heads/main.zip) 
 
-## Install MySQL
+## Install MySQL (Docker)
 
 1. [Install Docker Desktop](https://docs.docker.com/desktop/install/mac-install/)
 
@@ -37,6 +46,7 @@ If you are missing ```git``` you can [Download](https://github.com/flaviomartins
 7. Enter the the password: aid
 
 8. Lets try to list the data/ files. Run ```mysql> system ls -l``` to list the files.
+
 
 ## Alternatives to MySQL Workbench
 
@@ -57,11 +67,36 @@ If you are missing ```git``` you can [Download](https://github.com/flaviomartins
 
 ## Install Java JDK 11
 
-### Using Homebrew (recommended)
+### Install OpenJDK 11
 
-1. [Install Homebrew](https://brew.sh/)
+1. ```brew install openjdk@11```
 
-2. ```brew install openjdk@11```
+2. ```sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk```
+
+### Install JEnv to set OpenJDK 11 as the default JDK
+
+1. ```brew install jenv```
+
+2. To activate jenv, add the following to your `~/.zshrc`:
+    ```
+    export PATH="$HOME/.jenv/bin:$PATH"
+    eval "$(jenv init -)"
+    ```
+
+On a new Terminal window the command `jenv` is available 
+
+1. ```$ jenv add /Library/Java/JavaVirtualMachines/openjdk-11.jdk```
+
+2. ```$ jenv global 11.0```
+
+3. ```$ jenv shell 11.0```
+
+4. ```$ java -version``` should display something like the following:
+    ```
+    openjdk version "11.0.16.1" 2022-08-12
+    OpenJDK Runtime Environment Homebrew (build 11.0.16.1+0)
+    OpenJDK 64-Bit Server VM Homebrew (build 11.0.16.1+0, mixed mode)
+    ```
 
 
 ## Install Rosetta 2
@@ -97,23 +132,26 @@ Here is how you can force the shell to run in Intel mode so that you can continu
 
 2. Create a home directory `~/Pentaho/` to install the tools.
 
-3. Most tools seem to run if launched from the `Terminal (Intel)` profile with the exception of PDI. Lets fix that.
+3. Most tools seem to run if launched from the `Terminal (Intel)` profile with the exception of PDI. Lets fix that next.
 
 ### Pentaho Data Integration 
 
 1. The PDI tool should be installed at `~/Pentaho/data-integration/`.
 
-2. Download the [mysql-connector-java](https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.30.zip) driver and copy the `.jar` file inside to `~/Pentaho/data-integration/drivers/`
+2. To run on Apple Silicon we need to replace the bundled version of SWT at `~/Pentaho/data-integration/libswt/osx64/swt.jar` with the `swt.jar` for `aarch64` inside this zip [swt-4.26M1-cocoa-macosx-aarch64.zip](https://download.eclipse.org/eclipse/downloads/drops4/S-4.26M1-202209281800/swt-4.26M1-cocoa-macosx-aarch64.zip)
 
-3. To run on Apple Silicon we need to replace the bundled version of SWT at `~/Pentaho/data-integration/libswt/osx64/swt.jar` with the `swt.jar` for `aarch64` inside this zip [swt-4.26M1-cocoa-macosx-aarch64.zip](https://download.eclipse.org/eclipse/downloads/drops4/S-4.26M1-202209281800/swt-4.26M1-cocoa-macosx-aarch64.zip)
+3. Now open a Terminal window and switch to the `Terminal (Intel)` profile and move into the directory of PDI ```$ cd ~/Pentaho/data-integration/```.
 
-4. Now open a Terminal window and switch to the `Terminal (Intel)` profile and move into the directory of PDI ```$ cd ~/Pentaho/data-integration/```.
+4. You can now run PDI with ```$ ./spoon.sh```.
 
-5. You can now run PDI with ```$ ./spoon.sh```.
+5. Do not forget to install the [mysql-connector-java](https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.30.zip) driver. Copy the `.jar` file inside the ZIP to the `~/Pentaho/data-integration/lib/` directory. When adding a new Database connection select MySQL and then JDBC (native).
 
 
--- 
+--- 
+
+
 If you can help improve this guide send me a pull request!
+
 
 Good luck!
 
