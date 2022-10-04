@@ -96,7 +96,7 @@ MySQL Workbench is crashing on the Apple Silicon Macs.
 
 On a new Terminal window the command `jenv` is available 
 
-1. ```$ jenv add /Library/Java/JavaVirtualMachines/openjdk-11.jdk```
+1. ```$ jenv add /Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home/```
 
 2. ```$ jenv global 11.0```
 
