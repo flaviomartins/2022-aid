@@ -158,6 +158,18 @@ Here is how you can force the shell to run in Intel mode so that you can continu
 5. Do not forget to install the [mysql-connector-java](https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.30.zip) driver. Copy the `.jar` file inside the ZIP to the `~/Pentaho/data-integration/lib/` directory. When adding a new Database connection select MySQL and then JDBC (native).
 
 
+## Install DataCleaner
+
+1. Download latest [DataCleaner (Community Edition)](https://datacleaner.github.io/downloads)
+
+2. Unzip it into `~/Pentaho/` and it will create the `~/Pentaho/DataCleaner/` directory.
+
+3. `$ cd ~/Pentaho/DataCleaner/`
+
+4. `$ ./datacleaner.sh`
+
+5. [Installing database drivers in DataCleaner desktop](https://datacleaner.github.io/docs/5.7.0/html/ch13s01.html) is done in the application itself while it is running.
+
 --- 
 
 
