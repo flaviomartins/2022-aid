@@ -157,6 +157,23 @@ Here is how you can force the shell to run in Intel mode so that you can continu
 
 5. Do not forget to install the [mysql-connector-java](https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.30.zip) driver. Copy the `.jar` file inside the ZIP to the `~/Pentaho/data-integration/lib/` directory. When adding a new Database connection select MySQL and then JDBC (native).
 
+### Pentaho Schema Workbench
+
+We just need to add the JDBC MySQL Connector Driver to the Schema Workbench `lib/` directory and use a different class name. Just follow the instructions here.
+
+1. Do not forget to install the [mysql-connector-java](https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-8.0.30.zip) driver. Copy the `.jar` file inside the ZIP to the `~/Pentaho/schema-workbench/lib/` directory.
+
+2. Create a new `Database connection` in `Options -> Connection...` and enter the desired name.
+
+3. For the `Connection type` select `Generic database` and `JDBC (native)`.
+
+4. For the `Custom connection URL` enter `jdbc:mysql://localhost`.
+
+5. For the `Custom driver class name` enter `com.mysql.cj.jdbc.Driver`.
+
+6. Enter the username `aid` and password `aid` as per usual.
+
+6. Click `Test` to check if a connection is made.
 
 ## Install DataCleaner
 
