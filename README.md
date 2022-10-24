@@ -61,9 +61,9 @@ You can opt to run MyCLI instead of `mysql` client for the improvements in ease 
 
 MySQL Workbench is crashing on the Apple Silicon Macs.
 
-### Adminer (Web App)
+### Adminer (Web App on port 8000)
 
-1. Visit the [Adminer page](http://localhost:8080)
+1. Visit the [Adminer page](http://localhost:8000)
 
 2. Enter the credentials
 
