@@ -145,6 +145,29 @@ Here is how you can force the shell to run in Intel mode so that you can continu
 
 3. Most tools seem to run if launched from the `Terminal (Intel)` profile with the exception of PDI. Lets fix that next.
 
+
+### Pentaho Server and Saiku
+
+1. The Pentaho Server should be installed at `~/Pentaho/pentaho-server/`
+
+2. Install [Saiku Analytics with fix for Pentaho 9](https://github.com/ambientelivre/saiku-fix)
+
+3. Add `export PENTAHO_JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home"` to `~/.zshrc` to force OpenJDK 11.
+
+4. Also, add a line with `export JAVA_HOME` before `sh startup.sh` on the `start-pentaho.sh` script so the `startup.sh` script picks the variable up: 
+
+```bash
+  export JDK_JAVA_OPTIONS
+
+  JAVA_HOME=$_PENTAHO_JAVA_HOME
+  export JAVA_HOME
+
+  sh startup.sh
+fi
+```
+
+5. Open a new Terminal window move to `cd ~/Pentaho/pentaho-server/` and run `./start-pentaho.sh`.
+
 ### Pentaho Data Integration 
 
 1. The PDI tool should be installed at `~/Pentaho/data-integration/`.
